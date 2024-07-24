@@ -25,36 +25,39 @@
         width: 128px;
     } */
 
-
+    img{
+        max-width: 100%;
+        height: auto;
+    }
 
     .meal03{
         position: absolute;
         top: -10%;
         left: 5%;
-        height: 215px;
-        width: 512px;
+        max-width: 35%;
+        max-height: 35%;
     }
     .meal04{
         position: absolute;
-        top: -5%;
-        right: 25%;
-        height:129px;
-        width: 256px;
+        top: 0%;
+        right: 15%;
+        max-width: 25%;
+        max-height: 25%;
     }
 
     .meal05{
         position: absolute;
         right: 10%;
         top:55%;
-        height: 108px;
-        width: 341px;
+        max-width: 25%;
+        max-height: 25%;
     }
     .background03{
         position: absolute;
         left: 40%;
         bottom:0;
-        height:400px;
-        width: 400px;
+        max-width: 40%;
+        max-height: 40%;
         z-index: 999px;
         
     }
@@ -62,14 +65,14 @@
         position: absolute;
         left: 0;
         top:40%;
-        height:520px;
-        width: 520px;
+        max-width: 50%;
+        max-height: 50%;
     }
     .background05{
         position: absolute;
         right: 0%;
-        height: 480px;
-        width: 480px;
+        max-width: 40%;
+        max-height: 40%;
     }
 
     .container{
@@ -164,7 +167,61 @@
     .footet-info{
         color: #b5e7f5;
     }
+    /* RWD */
+    @media screen and (min-width: 756px) {
+    .title{
+    font-size: 52px;
+    font-weight: 800;
+    font-family: 'Calibri', '微軟正黑體';
+    line-height: 2;
+    color: #a3e4ef;
 
+    }
+    .meal03{
+        position: absolute;
+        top: 0%;
+        left: 5%;
+        max-width: 35%;
+        max-height: 35%;
+    }
+    .meal04{
+        position: absolute;
+        top: -3%;
+        right: 15%;
+        max-width: 25%;
+        max-height: 25%;
+    }
+    .meal05{
+        position: absolute;
+        right: 10%;
+        top:30%;
+        max-width: 25%;
+        max-height: 25%;
+    }
+    .background03{
+        position: absolute;
+        left: 45%;
+        bottom:60%;
+        max-width: 20%;
+        max-height: 20%;
+        z-index: 999px;
+        
+    }
+    .background04{
+        position: absolute;
+        left: 10%;
+        top:20%;
+        max-width: 20%;
+        max-height: 20%;
+    }
+    .background05{
+        position: absolute;
+        right: 5%;
+        top:10%;
+        max-width: 20%;
+        max-height: 20%;
+    }
+}
     </style>
 </head>
 <body>
