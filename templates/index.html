@@ -107,7 +107,12 @@
         text-shadow: 0 0 50px #06d6d6, 0 0 150px #06d6d6, 0 0 50px #06d6d6;
     }
     }
+    .table-container{
+        width: 100%;
+        overflow-x: auto;
+    }
     .table {
+        font-size: 12px;
         width: 100%;
         border-collapse: collapse;
         color: #c755a1;
@@ -269,37 +274,40 @@
               {% endif %}
             {% endwith %}
 
-            {% if foods %}
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr class="table-info">
-                        <th class="text-muted">食物名稱</th>
-                        <th class="text-muted">每份供應量熱量(大卡)</th>
-                        <th class="text-muted">每份供應量重量(公克)</th>
-                        <th class="text-muted">蛋白質(公克)</th>
-                        <th class="text-muted">脂肪(公克)</th>
-                        <th class="text-muted">脂肪佔熱量比(%)</th>
-                    </tr>
-                </thead>
-                    {% for food in foods %}
-                    <tr>
-                        <td class="text-muted">{{ food['食物名稱'] }}</td>
-                        <td class="text-muted">{{ food['每份供應量熱量(大卡)'] }}</td>
-                        <td class="text-muted">{{ food['每份供應量重量(公克)'] }}</td>
-                        <td class="text-muted">{{ food['蛋白質(公克)'] }}</td>
-                        <td class="text-muted">{{ food['脂肪(公克)'] }}</td>
-                        <td class="text-muted">{{ food['脂肪佔熱量比(%)'] }}</td>
-                    </tr>
-                    {% endfor %}
-                
-                
-            </table>
-
-                <form method="POST" action="{{ url_for('reset') }}">
-                    <input type="submit" value="返回" class="btn btn-info text-muted">
+            <div class="table-container">
+                {% if foods %}
+                <table class="table table-responsive">
+                    <thead class="thead-dark">
+                        <tr class="table-info table-responsive-sm">
+                            <th class="text-muted">名稱</th>
+                            <th class="text-muted">熱量(大卡)</th>
+                            <th class="text-muted">重量(公克)</th>
+                            <th class="text-muted">蛋白質(公克)</th>
+                            <th class="text-muted">脂肪(公克)</th>
+                            <th class="text-muted">脂肪佔熱量比(%)</th>
+                        </tr>
+                    </thead>
+                        {% for food in foods %}
+                        <tr>
+                            <td class="text-muted">{{ food['食物名稱'] }}</td>
+                            <td class="text-muted">{{ food['每份供應量熱量(大卡)'] }}</td>
+                            <td class="text-muted">{{ food['每份供應量重量(公克)'] }}</td>
+                            <td class="text-muted">{{ food['蛋白質(公克)'] }}</td>
+                            <td class="text-muted">{{ food['脂肪(公克)'] }}</td>
+                            <td class="text-muted">{{ food['脂肪佔熱量比(%)'] }}</td>
+                        </tr>
+                        {% endfor %}
                     
-                </form>
-            {% endif %}
+                    
+                </table>
+    
+                    <form method="POST" action="{{ url_for('reset') }}">
+                        <input type="submit" value="返回" class="btn btn-info text-muted">
+                        
+                    </form>
+                {% endif %}
+            </div>
+
         </div>
 
     </div>
