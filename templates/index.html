@@ -17,6 +17,47 @@
         height: 100vh;
         
     }
+    .warning-popup {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.popup-content {
+    position: relative; 
+    margin: auto; 
+    padding: 20px; 
+    border: 1px solid #888; 
+    width: 80%; 
+    max-width: 400px; 
+    background-color: white; 
+    text-align: center; 
+    top: 25%; 
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute; 
+    right: 10px; 
+    top: 10px; 
+    color: #aaa; 
+    font-size: 28px; 
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black; 
+    text-decoration: none; 
+    cursor: pointer;
+}
+
 
     /* .meal01{
         position: absolute;
@@ -233,7 +274,12 @@
     </style>
 </head>
 <body>
-    
+    <div id="warning-popup" class="warning-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p>使用電腦版達到最佳體驗</p>
+        </div>
+    </div>
     <!-- <img class="meal01" src="/static/images/meal1.png" alt="">     -->
     <img class="meal03" src="/static/images/meal3.png" alt="">   
     <!-- <img class="meal04" src="/static/images/meal4.png" alt="">     -->
@@ -327,15 +373,18 @@
     <script>
         var rellax = new Rellax('.rellax');
         document.addEventListener("DOMContentLoaded", function() {
-    function checkScreenSize() {
-        if (window.innerWidth <= 480) {
-            alert("使用電腦版達到最佳體驗");
-        }
+    // 检查屏幕宽度并显示警告
+    if (window.innerWidth <= 480 && !localStorage.getItem("warningDismissed")) {
+        document.getElementById("warning-popup").style.display = "block";
     }
-
-    checkScreenSize();
-    window.addEventListener('resize', checkScreenSize);
 });
+
+function closePopup() {
+    document.getElementById("warning-popup").style.display = "none";
+    localStorage.setItem("warningDismissed", "true");
+}
+
+
     </script>
     </body> 
 
