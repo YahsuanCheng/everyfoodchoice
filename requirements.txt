@@ -1,4 +1,4 @@
 flask
 pandas
 openpyxl
-gunicornpip install --upgrade pip
+gunicornpip
