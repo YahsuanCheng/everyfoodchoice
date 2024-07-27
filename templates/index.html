@@ -326,6 +326,16 @@
     <script src="{{ url_for('static', filename='js/rellax.min.js') }}"></script>
     <script>
         var rellax = new Rellax('.rellax');
+        document.addEventListener("DOMContentLoaded", function() {
+    function checkScreenSize() {
+        if (window.innerWidth <= 480) {
+            alert("使用電腦版達到最佳體驗");
+        }
+    }
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+});
     </script>
     </body> 
 
