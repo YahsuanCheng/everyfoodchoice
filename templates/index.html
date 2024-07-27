@@ -125,10 +125,11 @@
         padding: 8px;
         text-align: center;
         font-family: 'Calibri', '微軟正黑體';
+        white-space: nowrap; 
         color: #ff00dd;
     }
     th {
-        
+        white-space: nowrap; 
 
         font-family: 'Calibri', '微軟正黑體';
     }
@@ -274,15 +275,17 @@
 
             <div class="table-container">
                 {% if foods %}
-                <table class="table table-responsive">
+                <table class="table table-responsive table-responsive-xl">
                     <thead class="thead-dark">
-                        <tr class="table-info table-responsive-sm">
+                        <tr class="table-info ">
                             <th class="text-muted">名稱</th>
                             <th class="text-muted">熱量(大卡)</th>
                             <th class="text-muted">重量(公克)</th>
                             <th class="text-muted">蛋白質(公克)</th>
                             <th class="text-muted">脂肪(公克)</th>
                             <th class="text-muted">脂肪佔熱量比(%)</th>
+                            <th class="text-muted">碳水化合物(公克)</th>
+
                         </tr>
                     </thead>
                         {% for food in foods %}
@@ -293,6 +296,7 @@
                             <td class="text-muted">{{ food['蛋白質(公克)'] }}</td>
                             <td class="text-muted">{{ food['脂肪(公克)'] }}</td>
                             <td class="text-muted">{{ food['脂肪佔熱量比(%)'] }}</td>
+                            <td class="text-muted">{{ food['碳水化合物(公克)'] }}</td>
                         </tr>
                         {% endfor %}
                     
