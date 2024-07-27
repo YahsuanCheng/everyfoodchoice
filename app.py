@@ -13,6 +13,8 @@ df['每份供應量熱量(大卡)'] = pd.to_numeric(df['每份供應量熱量(�
 df['每份供應量重量(公克)'] = pd.to_numeric(df['每份供應量重量(公克)'], errors='coerce')
 df['蛋白質(公克)'] = pd.to_numeric(df['蛋白質(公克)'], errors='coerce')
 df['脂肪(公克)'] = pd.to_numeric(df['脂肪(公克)'], errors='coerce')
+df['碳水化合物(公克)'] = pd.to_numeric(df['碳水化合物(公克)'], errors='coerce')
+
 # 确保脂肪占热量比是字符串类型
 df['脂肪佔熱量比(%)'] = df['脂肪佔熱量比(%)'].astype(str)
 
