@@ -308,9 +308,10 @@
             <input type="submit" value="送出" class="btn btn-info text-muted"  >
         </form>
         <div class="recommand_section">
-            <h6 class="subtitle">推薦項目</h6>
+            
             {% with messages = get_flashed_messages(with_categories=true) %}
               {% if messages %}
+              <h6 class="subtitle">推薦項目</h6>
                 <ul class="alert">
                   {% for category, message in messages %}
                     <li>{{ message }}</li>
